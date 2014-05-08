@@ -77,6 +77,15 @@ namespace BillsApplication.Controllers
         }
 
         [HttpGet]
+        public ActionResult DetailsByName(string billName)
+        {
+            var bill = _service.GetBillByName(billName);
+            if (bill == null) throw new Exception("Bill not found");
+
+            return View("Details", bill);
+        }
+
+        [HttpGet]
         public ActionResult Delete(int id)
         {
             _service.DeleteBillById(id);
