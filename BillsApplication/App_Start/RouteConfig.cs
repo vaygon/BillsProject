@@ -13,6 +13,14 @@ namespace BillsApplication
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //Add new configured route
+            routes.MapRoute(
+                name: "BillByName",
+                url: "Bill/{billname}",
+                defaults: new { controller = "Bill", action = "DetailsByName", billname = UrlParameter.Optional },
+                constraints: new { billname = "[A-Za-z]+" }
+                );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

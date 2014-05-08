@@ -12,6 +12,7 @@ namespace BillsApplicationDomain.Services
         List<Bill> GetBills();
         void Add(Bill bill);
         Bill GetBillById(int id);
+        Bill GetBillByName(string billName);
         void Update(Bill bill);
         void DeleteBillById(int id);
     }
@@ -42,12 +43,18 @@ namespace BillsApplicationDomain.Services
 
         public void Add(Bill bill)
         {
+            bill.Name.ToLower();
             _repo.Create<Bill>(bill);
         }
 
         public Bill GetBillById(int id)
         {
             return _repo.GetById<Bill>(id);
+        }
+
+        public Bill GetBillByName(string billName)
+        {
+            return _repo.Find<Bill>(x => x.Name == billName.ToLower()).FirstOrDefault();
         }
        
         public void Update(Bill bill)

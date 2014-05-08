@@ -113,6 +113,10 @@
     <Compile Include="ControllersTests\BillsControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ControllersTests\HomeControllerTest.cs" />
+    <Compile Include="RouteTests\FakeHttpContextForRouting.cs" />
+    <Compile Include="RouteTests\FakeHttpRequestForRouting.cs" />
+    <Compile Include="RouteTests\FakeHttpResponseForRouting.cs" />
+    <Compile Include="RouteTests\RouteTests.cs" />
     <Compile Include="ServiceTests\BillServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
