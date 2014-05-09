@@ -16,7 +16,7 @@ namespace BillsApplication
             //Add new configured route
             routes.MapRoute(
                 name: "BillByName",
-                url: "Bill/{billname}",
+                url: "BillName/{billname}",
                 defaults: new { controller = "Bill", action = "DetailsByName", billname = UrlParameter.Optional },
                 constraints: new { billname = "[A-Za-z]+" }
                 );

@@ -259,6 +259,7 @@
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\NotImplemented.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

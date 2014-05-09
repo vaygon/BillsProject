@@ -31,5 +31,28 @@ namespace BillsApplication.Tests.RouteTests
             Assert.AreEqual(UrlParameter.Optional, routeData.Values["id"]);
         }
 
+        [TestMethod]
+        public void Test_Route_BillName()
+        {
+            // This test checks the default route when only the controller is specified
+            // Arrange
+
+            var context = new FakeHttpContextForRouting(requestUrl: "~/BillName/Test");
+            var routes = new RouteCollection();
+
+            // use the name of your application
+            BillsApplication.RouteConfig.RegisterRoutes(routes);
+
+            // Act
+
+            RouteData routeData = routes.GetRouteData(context);
+
+            // Assert
+
+            Assert.AreEqual("Bill", routeData.Values["controller"]);
+            Assert.AreEqual("DetailsByName", routeData.Values["action"]);
+            Assert.AreEqual("Test", routeData.Values["billname"]);
+        }
+
     }
 }
