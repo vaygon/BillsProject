@@ -32,19 +32,18 @@ namespace BillsApplication.Controllers
         }
 
         [HttpGet]
-        public ActionResult Create()
+        public PartialViewResult Create()
         {
-            return View(new Bill()); 
+            return PartialView("_Create", new Bill()); 
         }
 
         [HttpPost]
-        public ActionResult Create(Bill model)
+        public void Create(Bill model)
         {
             if (ModelState.IsValid)
             {
                 _service.Add(model);
             }
-            return RedirectToAction("Index");
         }
 
         [HttpGet]

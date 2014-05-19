@@ -26,6 +26,13 @@ namespace BillsApplication
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Ajax").Include(
+                     "~/Scripts/jquery-2.1.0.min.js",
+                     "~/Scripts/jquery-ui-1.10.4.min.js",
+                     "~/Scripts/jquery.unobtrusive-ajax.min.js",
+                     "~/Scripts/jquery.validate.min.js",
+                     "~/Scripts/jquery-ui.unobtrusive.js"));
         }
     }
 }
