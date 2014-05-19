@@ -38,12 +38,14 @@ namespace BillsApplication.Controllers
         }
 
         [HttpPost]
-        public void Create(Bill model)
+        public ActionResult Create(Bill model)
         {
             if (ModelState.IsValid)
             {
                 _service.Add(model);
             }
+
+            return RedirectToAction("Index");
         }
 
         [HttpGet]

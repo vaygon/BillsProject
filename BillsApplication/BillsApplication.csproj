@@ -328,7 +328,7 @@
     <Content Include="Views\Shared\NotImplemented.cshtml" />
     <Content Include="Views\Shared\_Menu.cshtml" />
     <Content Include="Views\Bill\Create - Copy.cshtml" />
-    <Content Include="Views\Shared\_Create.cshtml" />
+    <Content Include="Views\Bill\_Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
